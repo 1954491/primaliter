@@ -41,16 +41,12 @@ def est_premier_seq(nombre: int) -> bool:
     """Détermine si un nombre est premier ou non"""
     if nombre < 1:
         raise ValueError("Le nombre doit être positif")
-
     if nombre == 1:
         return False
-
     if nombre <= 3:
         return True
-
     if nombre % 2 == 0:
         return False
-
     racine = math.isqrt(nombre)
 
     for n in range(3, racine + 1, 2):
