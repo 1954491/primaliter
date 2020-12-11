@@ -53,7 +53,7 @@ def est_premier_seq(nombre: int) -> bool:
 
     racine = math.isqrt(nombre)
 
-    for n in range(3, racine + 1,2):
+    for n in range(3, racine + 1, 2):
         if nombre % n == 0:
             return False
 
