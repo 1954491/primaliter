@@ -5,7 +5,7 @@ Programme séquentiel pour déterminer si un nombre est premier
 
 2020, Xavier Gagnon
 """
-from typing import NoReturn
+from typing import NoReturn, List
 from timeit import default_timer as timer
 import math
 import sys
@@ -15,19 +15,19 @@ from colorama import Fore
 colorama.init()
 
 
-def main() -> None:
+def main(argv: List[str]) -> None:
     """Fonction principale"""
     debut = timer()
     try:
 
-        if len(sys.argv) == 1:
+        if len(argv) == 1:
             raise IndexError("La commande doit avoir au moins un argument")
 
         reponse = "Non"
-        if est_premier_seq(int(sys.argv[1])):
+        if est_premier_seq(int(argv[1])):
             reponse = "Oui"
 
-        print(Fore.CYAN + "Selon Xavier Gagnon:", Fore.RESET, reponse)
+        print(Fore.CYAN + "Selon Xavier Gagn.on:", Fore.RESET, reponse)
         print(Fore.MAGENTA + "Duréé:", timer() - debut, "sec")
     except KeyboardInterrupt:
         print(Fore.MAGENTA + "Duréé:", timer() - debut, "sec")
@@ -70,4 +70,4 @@ def exexit(ex: BaseException, exit_code: int = 1) -> NoReturn:
 
 
 if __name__ == '__main__':
-    main()
+    main(sys.argv)
